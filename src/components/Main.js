@@ -2,8 +2,10 @@ import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { useState, useEffect } from "react";
 import AddForm from "./AddForm";
+import GroceryHeading from "./GroceryHeading";
 
 const Main = (props) => {
+    const [showAddForm, setShowAddForm] = useState(false);
     const [grocery, setGrocery] = useState(null);
     //Backend URL
     const URL = "https://backend-grocerylist.herokuapp.com/grocery";
@@ -43,7 +45,11 @@ const Main = (props) => {
     return (
         <main>
             <Route path="/grocery">
-                <AddForm grocery={grocery} addItem={addItem} />
+                <GroceryHeading
+                    onAdd={() => setShowAddForm(!showAddForm)}
+                    showAddForm={showAddForm}
+                />
+                {showAddForm && <AddForm grocery={grocery} addItem={addItem} />}
             </Route>
         </main>
     );
