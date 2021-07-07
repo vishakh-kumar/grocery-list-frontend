@@ -1,12 +1,13 @@
 import React from "react";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import { useState, useEffect } from "react";
 import AddForm from "./AddForm";
 import GroceryHeading from "./GroceryHeading";
+import Index from "../pages/Index";
 
 const Main = (props) => {
     const [showAddForm, setShowAddForm] = useState(false);
-    const [grocery, setGrocery] = useState(null);
+    const [groceries, setGroceries] = useState(null);
     //Backend URL
     const URL = "https://backend-grocerylist.herokuapp.com/grocery";
     //Fetch data from Backend
@@ -14,7 +15,7 @@ const Main = (props) => {
         const response = await fetch(URL);
         //convert JSON to Usable JS
         const data = await response.json();
-        setGrocery(data);
+        setGroceries(data);
     };
     //=========================
     //       Add Items
@@ -41,7 +42,6 @@ const Main = (props) => {
         getGrocery();
     };
 
-    useEffect(() => getGrocery(), []);
     return (
         <main>
             <Route path="/grocery">
@@ -49,7 +49,10 @@ const Main = (props) => {
                     onAdd={() => setShowAddForm(!showAddForm)}
                     showAddForm={showAddForm}
                 />
-                {showAddForm && <AddForm grocery={grocery} addItem={addItem} />}
+                {showAddForm && (
+                    <AddForm groceries={groceries} addItem={addItem} />
+                )}
+                <Index groceries={groceries} deleteItem={deleteItem} />
             </Route>
         </main>
     );

@@ -1,10 +1,11 @@
 import React from "react";
 import { useState } from "react";
 
-const AddForm = ({ grocery, addItem }) => {
+const AddForm = ({ groceries, addItem }) => {
+    let currentDate = Date().slice(0, 11);
     const [newForm, setNewForm] = useState({
         item: "",
-        date: "",
+        date: currentDate,
         urgent: false,
     });
 
@@ -17,10 +18,14 @@ const AddForm = ({ grocery, addItem }) => {
 
     const onSubmit = (event) => {
         event.preventDefault();
+        if (!newForm.item) {
+            alert("Please Add An Item");
+            return;
+        }
         addItem(newForm);
         setNewForm({
             item: "",
-            date: "",
+            date: currentDate,
             urgent: false,
         });
     };
@@ -37,7 +42,7 @@ const AddForm = ({ grocery, addItem }) => {
                 />
                 <label>Date</label>
                 <input
-                    type="date"
+                    type="text"
                     name="date"
                     value={newForm.date}
                     onChange={handleChange}
