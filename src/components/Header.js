@@ -12,10 +12,14 @@ const Header = () => {
             }}
         >
             <Link to="/">
-                <h3>Home</h3>
+                <h3 className="headingIcon">
+                    <i class="fas fa-list-alt"></i>
+                </h3>
             </Link>
             <Link to="#">
-                <h3>Users</h3>
+                <h3 className="headingIcon">
+                    <i class="fas fa-user"></i>
+                </h3>
             </Link>
         </nav>
     );

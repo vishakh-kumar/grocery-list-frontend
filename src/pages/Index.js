@@ -9,7 +9,7 @@ const Index = ({ groceries, deleteItem }) => {
         return groceries.map((grocery) => (
             <div key={grocery._id} className="grocery">
                 <div className={`grocery ${grocery.urgent ? "urgent" : ""}`}>
-                    <h3>
+                    <h3 className="displayItem">
                         <Link to={`/grocery/${grocery._id}`}>
                             {grocery.item.toUpperCase()}
                         </Link>
