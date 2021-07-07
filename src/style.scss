@@ -117,15 +117,26 @@ div {
         }
     }
 }
-i {
+.displayItem > i {
     margin-top: 10px;
     color: rgb(134, 134, 134);
     cursor: pointer;
 }
-i:hover {
+.displayItem > i:hover {
     color: red;
 }
-i:active {
+.displayItem > i:active {
+    transform: scale(0.98);
+}
+.headingIcon > i {
+    color: #2e302e;
+    margin: 20px;
+    font-size: 25px;
+}
+.headingIcon > i:hover {
+    color: rgb(104, 104, 104);
+}
+.headingIcon > i:active {
     transform: scale(0.98);
 }
 .storeLogos {
