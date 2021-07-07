@@ -11,7 +11,7 @@ const Header = () => {
                 marginRight: 15,
             }}
         >
-            <Link to="/grocery">
+            <Link to="/">
                 <h3>Home</h3>
             </Link>
             <Link to="#">
