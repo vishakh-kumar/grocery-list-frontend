@@ -3,7 +3,7 @@ import AddButton from "./AddButton";
 
 const GroceryHeading = ({ title, onAdd, showAddForm }) => {
     return (
-        <header className="header">
+        <header className="groceryHeader">
             <h1>Grocery List</h1>
             <AddButton
                 color={showAddForm ? "red" : "green"}

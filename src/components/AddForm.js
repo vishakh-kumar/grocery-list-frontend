@@ -47,14 +47,15 @@ const AddForm = ({ groceries, addItem }) => {
                     value={newForm.date}
                     onChange={handleChange}
                 />
-                <div className="form-control form-control-check"></div>
-                <label>Is It Urgent?</label>
-                <input
-                    type="checkbox"
-                    name="urgent"
-                    value={newForm.urgent}
-                    onChange={handleChecked}
-                />
+                <div className="form-control form-control-check">
+                    <label>Is It Urgent?</label>
+                    <input
+                        type="checkbox"
+                        name="urgent"
+                        value={newForm.urgent}
+                        onChange={handleChecked}
+                    />
+                </div>
             </div>
             <button type="submit" className="btn btn-block">
                 Add Item
