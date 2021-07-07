@@ -1,7 +1,7 @@
 import React from "react";
 import AddButton from "./AddButton";
 
-const GroceryHeading = ({ title, onAdd, showAddForm }) => {
+const GroceryHeading = ({ onAdd, showAddForm }) => {
     return (
         <header className="groceryHeader">
             <h1>Grocery List</h1>

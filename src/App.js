@@ -13,7 +13,3 @@ function App() {
 }
 
 export default App;
-
-//  https://www.walmart.com/search/?query=${item}
-//  https://www.target.com/s?searchTerm=${item}
-//  https://www.kroger.com/search?query=${item}

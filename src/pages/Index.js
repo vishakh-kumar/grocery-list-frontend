@@ -9,20 +9,16 @@ const Index = ({ groceries, deleteItem }) => {
         return groceries.map((grocery) => (
             <div key={grocery._id} className="grocery">
                 <div className={`grocery ${grocery.urgent ? "urgent" : ""}`}>
-                    <Link to={`/grocery/${grocery._id}`}>
-                        <h3>
+                    <h3>
+                        <Link to={`/grocery/${grocery._id}`}>
                             {grocery.item.toUpperCase()}
-                            <p>
-                                <i
-                                    className="fas fa-trash-alt"
-                                    style={{ color: "red" }}
-                                    onClick={() =>
-                                        handleDelete(`/${grocery._id}`)
-                                    }
-                                ></i>
-                            </p>
-                        </h3>
-                    </Link>
+                        </Link>
+
+                        <i
+                            className="fas fa-trash-alt"
+                            onClick={() => handleDelete(`/${grocery._id}`)}
+                        ></i>
+                    </h3>
                     <p>{grocery.date}</p>
                 </div>
             </div>

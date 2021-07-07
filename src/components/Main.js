@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import AddForm from "./AddForm";
 import GroceryHeading from "./GroceryHeading";
 import Index from "../pages/Index";
+import Show from "../pages/Show";
 
 const Main = (props) => {
     const [showAddForm, setShowAddForm] = useState(false);
@@ -41,19 +42,27 @@ const Main = (props) => {
         });
         getGrocery();
     };
-
+    useEffect(() => getGrocery(), []);
     return (
         <main>
-            <Route path="/grocery">
-                <GroceryHeading
-                    onAdd={() => setShowAddForm(!showAddForm)}
-                    showAddForm={showAddForm}
+            <Switch>
+                <Route exact path="/grocery">
+                    <GroceryHeading
+                        onAdd={() => setShowAddForm(!showAddForm)}
+                        showAddForm={showAddForm}
+                    />
+                    {showAddForm && (
+                        <AddForm groceries={groceries} addItem={addItem} />
+                    )}
+                    <Index groceries={groceries} deleteItem={deleteItem} />
+                </Route>
+                <Route
+                    path="/grocery/:id"
+                    render={(rp) => {
+                        return <Show {...rp} groceries={groceries} />;
+                    }}
                 />
-                {showAddForm && (
-                    <AddForm groceries={groceries} addItem={addItem} />
-                )}
-                <Index groceries={groceries} deleteItem={deleteItem} />
-            </Route>
+            </Switch>
         </main>
     );
 };
