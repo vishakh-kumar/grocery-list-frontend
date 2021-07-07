@@ -52,7 +52,7 @@ const AddForm = ({ groceries, addItem }) => {
                     <input
                         type="checkbox"
                         name="urgent"
-                        value={newForm.urgent}
+                        checked={newForm.urgent}
                         onChange={handleChecked}
                     />
                 </div>

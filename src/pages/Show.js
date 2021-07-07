@@ -14,7 +14,7 @@ const Show = ({ match, groceries }) => {
                     href={`https://www.walmart.com/search/?query=${grocery.item}`}
                 >
                     <img
-                        src="https://www.freepnglogos.com/uploads/walmart-logo-26.png"
+                        src="http://www.conewangocreek.org/wp-content/uploads/2015/04/walmart-logo-blue-gold-300x300.png"
                         alt="Walmart Logo"
                     />
                 </a>
