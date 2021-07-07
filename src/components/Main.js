@@ -46,7 +46,7 @@ const Main = (props) => {
     return (
         <main>
             <Switch>
-                <Route exact path="/grocery">
+                <Route exact path="/">
                     <GroceryHeading
                         onAdd={() => setShowAddForm(!showAddForm)}
                         showAddForm={showAddForm}

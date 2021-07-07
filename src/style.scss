@@ -141,3 +141,14 @@ i:active {
     margin-left: 8.5px;
     margin-right: 8.5px;
 }
+@media only screen and (max-width: 400px) {
+    .storeLogos {
+        display: grid;
+        img {
+            margin-top: 10px;
+        }
+    }
+    .container {
+        border: 0px;
+    }
+}
