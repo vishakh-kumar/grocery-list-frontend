@@ -37,6 +37,10 @@ A simple grocery list that lets you add and delete grocery items and also helps 
 
 ### [Grocery List App](https://mystifying-kilby-d16d5d.netlify.app/)
 
+## Scan for Mobile Version
+
+![screenshot](img/qrcode.png)
+
 ## Screenshots
 
 ![screenshot](img/screenshot1.png)
