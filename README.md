@@ -39,7 +39,7 @@ A simple grocery list that lets you add and delete grocery items and also helps 
 
 ## Scan for Mobile Version
 
-![screenshot](img/qrcode.png)
+![50px](img/qrcode.png)
 
 ## Screenshots
 
