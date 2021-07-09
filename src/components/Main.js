@@ -11,8 +11,8 @@ const Main = (props) => {
     const [groceries, setGroceries] = useState(null);
 
     //Backend URL
-    // const URL = "https://backend-grocerylist.herokuapp.com/grocery";
-    const URL = "http://localhost:4000/grocery";
+    const URL = "https://backend-grocerylist.herokuapp.com/grocery";
+
     //Fetch data from Backend
     const getGrocery = async (uid) => {
         const url = uid ? URL + "?uid=" + uid : URL;
