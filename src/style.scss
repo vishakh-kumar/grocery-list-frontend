@@ -108,8 +108,6 @@ div {
         a {
             text-decoration: none;
             color: black;
-            h3 {
-            }
         }
         p {
             float: left;
@@ -127,15 +125,20 @@ div {
 .displayItem > i:active {
     transform: scale(0.98);
 }
-.headingIcon > i {
+.headingIcon {
+    p {
+        margin-top: 3px;
+        margin-right: 5px;
+        font-size: 20px;
+    }
     color: #2e302e;
     margin: 20px;
     font-size: 25px;
 }
-.headingIcon > i:hover {
+.headingIcon:hover {
     color: rgb(104, 104, 104);
 }
-.headingIcon > i:active {
+.headingIcon:active {
     transform: scale(0.98);
 }
 .storeLogos {

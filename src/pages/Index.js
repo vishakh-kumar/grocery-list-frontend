@@ -6,6 +6,7 @@ const Index = ({ groceries, deleteItem }) => {
         const handleDelete = (id) => {
             deleteItem(id);
         };
+
         return groceries.map((grocery) => (
             <div key={grocery._id} className="grocery">
                 <div className={`grocery ${grocery.urgent ? "urgent" : ""}`}>
