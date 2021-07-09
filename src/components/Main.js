@@ -9,11 +9,14 @@ import Show from "../pages/Show";
 const Main = (props) => {
     const [showAddForm, setShowAddForm] = useState(false);
     const [groceries, setGroceries] = useState(null);
+
     //Backend URL
-    const URL = "https://backend-grocerylist.herokuapp.com/grocery";
+    // const URL = "https://backend-grocerylist.herokuapp.com/grocery";
+    const URL = "http://localhost:4000/grocery";
     //Fetch data from Backend
-    const getGrocery = async () => {
-        const response = await fetch(URL);
+    const getGrocery = async (uid) => {
+        const url = uid ? URL + "?uid=" + uid : URL;
+        const response = await fetch(url);
         //convert JSON to Usable JS
         const data = await response.json();
         setGroceries(data);
@@ -23,10 +26,12 @@ const Main = (props) => {
     //=========================
     const addItem = async (item) => {
         //make POST request to add item
+        const token = await props.user.getIdToken();
         await fetch(URL, {
             method: "POST",
             headers: {
                 "Content-type": "Application/json",
+                Authorization: "Bearer " + token,
             },
             //Convert JS to JSON
             body: JSON.stringify(item),
@@ -42,7 +47,15 @@ const Main = (props) => {
         });
         getGrocery();
     };
-    useEffect(() => getGrocery(), []);
+
+    useEffect(() => {
+        if (props.user) {
+            getGrocery(props.user.uid);
+        } else {
+            getGrocery();
+        }
+    }, [props.user]);
+
     return (
         <main>
             <Switch>
